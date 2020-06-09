@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block navbar %}
+{% with page=2 %}
+{{ block.super }}
+{% endwith %}
+{% endblock %}
+
+{% block body %}
+<div class="container mt-3">
+  <form method="POST" novalidate>{%csrf_token%}
+    <table class="table table-form">{{form}}</table>
+    <button class="btn btn-primary" type="submit">Lưu lại</button>
+    <a href="{% url 'category-list' %}" class="btn btn-secondary">Quay lại</a>
+  </form>
+</div>
+{% endblock %}

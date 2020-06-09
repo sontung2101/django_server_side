@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+<link rel="stylesheet" href="/static/css/main.css" >
+
+<div id="app">
+    <div class='container'>
+        <div class="row">
+            <div class="col-6">
+                <image class='product-detail-image' src="/{{product.image.url}}">            
+            </div>
+            
+            <div class="col-6 mt-5">
+                <div class='product-detail-title'>{{product.name}}</div>
+                <br>
+                <table class="table">
+                    <tr>
+                        <td>Hãng sản xuất:</td>
+                        <td>{{product.category.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Đặc điểm:</td>
+                        <td>{{product.description}}</td>
+                    </tr>                    
+                    <tr>
+                        <td>Giá bán:</td>
+                        <td><b>{{product.price}}₫</b></td>
+                    </tr>
+                </table>
+                <br>
+                <a class="btn btn-secondary" href="{% url 'home' %}">Quay lại</a>    
+                <a class="btn btn-primary" href="{% url 'purchase' product.id %}">Mua hàng</a>
+            </div>
+        </div>    
+    </div>
+</div>
